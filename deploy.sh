@@ -11,6 +11,6 @@ docker push afiqon/multi-server:$SHA
 docker push afiqon/multi-worker:$SHA
 
 kubectl apply -f k8s
-kubectl set images deployments/server-deployment server=afiqon/multi-server:$SHA
-kubectl set images deployments/client-deployment client=afiqon/multi-client:$SHA
-kubectl set images deployments/worker-deployment worker=afiqon/multi-worker:$SHA
+kubectl set image deployments/server-deployment server=afiqon/multi-server:$SHA
+kubectl set image deployments/client-deployment client=afiqon/multi-client:$SHA
+kubectl set image deployments/worker-deployment worker=afiqon/multi-worker:$SHA
