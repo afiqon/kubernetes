@@ -14,7 +14,7 @@ before_install:
     - gcloud auth activate-service-account --key-file service-account.json
     - gcloud config set project multi-k8s-270014
     - gcloud config set compute/zone asia-south1-a
-    - gcloud container clusters get get-credentials cluster-1
+    - gcloud container clusters get-credentials cluster-1
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
     - docker build -t afiqon/react-test -f ./client/Dockerfile.dev ./client
 
