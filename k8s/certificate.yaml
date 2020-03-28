@@ -1,0 +1,20 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+    name: afiqmustaffa-dev-tls
+spec:
+    secretName: afiqmustaffa-dev
+    issuerRef:
+        name: letsencrypt-prod
+        kind: ClusterIssuer
+    commonName: afiqmustaffa.dev
+    dnsNames:
+        - afiqmustaffa.dev
+        - www.afiqmustaffa.dev
+    acme:
+        config:
+            - http01:
+                ingressClass: nginx
+              domains:
+                - afiqmustaffa.dev
+                - www.afiqmustaffa.dev
